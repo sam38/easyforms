@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Easy Forms plugin for Craft CMS 3.x
+ *
+ * Easy Forms Settings.twig
+ *
+ * @author    Sudarshan Shakya
+ * @copyright Copyright (c) 2018 Sudarshan Shakya
+ * @link      https://github.com/sam38/easyforms.git
+ * @package   EasyForms
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("easyforms\\easyforms\\assetbundles\\easyforms\\EasyFormsAsset") %}
+
+{{ forms.textField({
+    label: 'Some Field',
+    instructions: 'Enter some setting here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: settings['someAttribute']})
+}}

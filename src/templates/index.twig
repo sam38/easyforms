@@ -1,0 +1,46 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Easy Forms plugin for Craft CMS 3.x
+ *
+ * Easy Forms index.twig
+ *
+ * @author    Sudarshan Shakya
+ * @copyright Copyright (c) 2018 Sudarshan Shakya
+ * @link      https://github.com/sam38/easyforms.git
+ * @package   EasyForms
+ * @since     1.0.0
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("easyforms\\easyforms\\assetbundles\\easyforms\\EasyFormsAsset") %}
+{% do view.registerAssetBundle("easyforms\\easyforms\\assetbundles\\indexcpsection\\IndexCPSectionAsset") %}
+
+{# Link for the ? icon at the bottom of the page #}
+{% set docsUrl = "https://github.com/sam38/easy-forms/blob/master/README.md" %}
+
+{# The title of this CP section #}
+{% set title = "Easy Forms" %}
+
+{# The URL to this plugin's base CP section #}
+{% set pluginCpUrl = url('easy-forms') %}
+
+{# Get a URL to an image in our AssetBundle #}
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@easyforms/easyforms/assetbundles/indexcpsection/dist', true) ~ '/img/Index-icon.svg' %}
+
+{# Content that should appear in the page header#}
+{% set extraPageHeaderHtml %}
+    <div class="buttons">
+        <a href="{{ pluginCpUrl }}" class="btn submit add icon">{{ "Click Me!"|t('easy-forms') }}</a>
+    </div>
+{% endset %}
+
+{# The content of the CP Section#}
+{% set content %}
+    <h2>{{ "Index CP Section body goes here"|t('easy-forms') }}</h2>
+    <img src="{{ iconUrl }}" height="64" width="64" />
+    <p class="textline"></p>
+{% endset %}

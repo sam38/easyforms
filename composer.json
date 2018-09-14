@@ -1,0 +1,43 @@
+{
+    "name": "easyforms/easy-forms",
+    "description": "A plugin to add easy forms to your craft website.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "easy forms"
+    ],
+    "support": {
+        "docs": "https://github.com/sam38/easy-forms/blob/master/README.md",
+        "issues": "https://github.com/sam38/easy-forms/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sudarshan Shakya",
+            "homepage": "https://github.com/sam38/easyforms.git"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "easyforms\\easyforms\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Easy Forms",
+        "handle": "easy-forms",
+        "hasCpSettings": true,
+        "hasCpSection": true,
+        "changelogUrl": "https://raw.githubusercontent.com/sam38/easy-forms/master/CHANGELOG.md",
+        "components": {
+            "easyFormsService": "easyforms\\easyforms\\services\\EasyFormsService"
+        },
+        "class": "easyforms\\easyforms\\EasyForms"
+    }
+}
